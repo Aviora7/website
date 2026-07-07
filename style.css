@@ -1,0 +1,1711 @@
+/* ===========================
+   GLOBAL
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background: #000;
+}
+
+/* ===========================
+   DEFAULT HIDE ALL SCENES
+=========================== */
+
+#callScreen, #kissScene, #blowPage,
+#agePage, #birthdayPage, #hugPage,
+#finalPage, #lastClipPage {
+    display: none;
+}
+
+/* ===========================
+   INTRO VIDEO
+=========================== */
+
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: -1;
+}
+.introLeft img{
+
+    width:380px;
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 0 30px rgba(255,255,255,.5);
+
+}
+
+
+
+.passBox{
+
+    width:350px;
+
+    padding:40px;
+
+    text-align:center;
+
+    background:rgba(0,0,0,.45);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+}
+
+
+.passBox h1{
+
+    font-size:60px;
+
+}
+
+
+.passBox h2{
+
+    font-size:35px;
+
+    margin-bottom:25px;
+
+}
+
+
+.passBox p{
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+}
+
+
+#passcode{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:30px;
+
+    border:none;
+
+    text-align:center;
+
+    font-size:22px;
+
+    margin-bottom:25px;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 35px;
+    border-radius: 40px;
+    font-size: 20px;
+    color: #fff;
+    background: #ff4f8b;
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+/* ===========================
+   INTRO PAGE
+=========================== */
+
+.content{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:120px;
+
+    color:white;
+
+}
+
+
+
+/* LEFT IMAGE */
+
+.introLeft img{
+
+    width:380px;
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 0 30px rgba(255,255,255,.5);
+
+}
+
+
+
+/* PASSCODE */
+
+.passBox{
+
+    width:350px;
+
+    padding:40px;
+
+    text-align:center;
+
+    background:rgba(0,0,0,.45);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+
+.passBox h1{
+
+    font-size:60px;
+
+}
+
+
+.passBox h2{
+
+    font-size:35px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+#passcode{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    font-size:20px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+#errorMsg{
+
+    margin-top:15px;
+
+    color:#ffcccc;
+
+    font-size:18px;
+
+}
+
+
+/* ===========================
+   CALL SCREEN
+=========================== */
+
+#callScreen {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background: url("images/call-bg.jpg") center/cover no-repeat;
+}
+
+.callOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.callContent {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    color: white;
+}
+
+.callContent h4 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.callContent h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+#callMsg {
+    font-size: 28px;
+    color: #ffeaea;
+    min-height: 40px;
+    margin-bottom: 50px;
+}
+
+/* ===========================
+   CALL BUTTON AREA
+=========================== */
+
+.buttons {
+    position: relative;
+    width: 450px;
+    height: 180px;
+}
+
+#acceptBtn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #2ecc71;
+}
+
+#declineBtn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #e74c3c;
+    transition: left 0.15s, top 0.15s;
+}
+
+/* ===========================
+   KISS SCENE
+=========================== */
+
+#kissScene {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background: url("images/kiss-bg.jpg") center/cover no-repeat;
+}
+
+.kissOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.kissContent {
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    color: white;
+}
+
+.kissContent h1 {
+    font-size: 80px;
+}
+
+.kissContent h2 {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.kissContent p {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#kissBtn{
+
+    position:absolute;
+
+    right:40px;
+
+    bottom:35px;
+
+    padding:16px 40px;
+
+    font-size:22px;
+
+    background:#ff4f8b;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    box-shadow:0 0 20px rgba(255,79,139,.6);
+
+}
+
+/* ===========================
+   KISS ANIMATION
+=========================== */
+
+#kissAnimation {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.flyKiss {
+    position: absolute;
+    bottom: -50px;
+    font-size: 35px;
+    animation: flyKiss 1s ease-out forwards;
+}
+
+@keyframes flyKiss {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateY(-600px)
+            translateX(var(--move))
+            rotate(25deg)
+            scale(1.5);
+    }
+}
+
+/* Kiss Content Layout */
+
+/* Kiss Content Layout */
+
+.kissContent{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:50px;
+
+    color:white;
+
+    z-index:2;
+
+    position:relative;
+
+}
+
+/* Left Flower */
+
+.kissLeft img{
+
+    width:230px;
+
+    height:300px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    box-shadow:0 0 25px rgba(255,255,255,.35);
+
+}
+
+/* Right Text */
+
+.kissRight{
+
+    max-width:500px;
+
+    text-align:left;
+
+}
+
+.kissRight h1{
+
+    font-size:70px;
+
+    margin-bottom:10px;
+
+}
+
+.kissRight h2{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+    text-shadow:0 0 15px hotpink;
+
+}
+
+.kissRight p{
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    color:#fff;
+
+}
+/* ===========================
+   BLOW PAGE
+=========================== */
+
+#blowPage {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+#blowVideo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blowOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+}
+
+.blowContent {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    color: white;
+}
+
+
+
+/* ===========================
+   AGE PAGE
+=========================== */
+
+#agePage{
+    position:fixed;
+    inset:0;
+    justify-content:center;
+    align-items:center;
+    background:url("images/22.jpg") center/cover no-repeat;
+}
+
+.ageOverlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.15); /* optional dark overlay */
+}
+/* AGE PAGE NEXT BUTTON */
+
+#ageNextBtn{
+    position:absolute;
+    right:30px;
+    bottom:30px;
+    width:65px;
+    height:65px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.9);
+    color:#ff4f8b;
+    font-size:32px;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(255,255,255,0.6);
+    transition:0.3s;
+}
+
+#ageNextBtn:hover{
+    transform:scale(1.15);
+    background:#fff;
+}
+/* ===========================
+   BIRTHDAY PAGE
+=========================== */
+
+#birthdayPage{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:url("images/birthday-bg.jpg") center/cover no-repeat;
+}
+
+.birthdayOverlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
+
+.birthdayContent{
+    position:relative;
+    z-index:2;
+    width:100%;
+    text-align:center;
+    color:#fff;
+}
+
+/* HAPPY BIRTHDAY */
+
+.birthdayTitle{
+    font-size:70px;
+    font-weight:bold;
+    margin-bottom:45px;
+    color:#fff;
+
+    text-shadow:
+    0 0 10px #fff,
+    0 0 20px #ff69b4,
+    0 0 35px #ff69b4,
+    0 0 55px #ff1493;
+
+    animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ff69b4,
+        0 0 40px #ff69b4;
+    }
+
+    to{
+        text-shadow:
+        0 0 15px #fff,
+        0 0 35px #ff1493,
+        0 0 70px #ff1493;
+    }
+}
+
+/* PHOTO ROW */
+
+.photoRow{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:30px;
+    flex-wrap:nowrap;
+}
+
+/* EACH CARD */
+
+.photoCard{
+    width:190px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* PHOTO */
+
+.photoCard img{
+    width:180px;
+    height:240px;
+    object-fit:cover;
+    border-radius:18px;
+    border:5px solid white;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+/* CAPTION */
+
+.photoCard p{
+    margin-top:15px;
+    color:#fff;
+    font-size:20px;
+    line-height:1.4;
+    text-align:center;
+    text-shadow:0 0 10px black;
+}
+
+/* PHOTO ANIMATION */
+
+.showPhoto img{
+    animation:showPhoto 1s forwards;
+}
+
+@keyframes showPhoto{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* NEXT BUTTON */
+
+#hugBtn{
+    margin-top:40px;
+    padding:16px 40px;
+    font-size:22px;
+    background:#ff4f8b;
+    color:#fff;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,79,139,.5);
+    transition:.3s;
+}
+
+#hugBtn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 35px rgba(255,79,139,.8);
+}
+.heart{
+    position:absolute;
+    color:#ff4f8b;
+    font-size:35px;
+    animation:heartFly 2s linear forwards;
+}
+
+@keyframes heartFly{
+
+    0%{
+        transform:translateY(100vh) scale(.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.6);
+        opacity:0;
+    }
+
+}
+/* ===========================
+   HUG PAGE
+=========================== */
+
+#hugPage {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background: url("images/hug-bg.jpg") center/cover no-repeat;
+}
+
+.hugOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.hugContent {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    color: white;
+}
+/* ================= LOVE PAGE ================= */
+
+#lovePage{
+    display:none;
+    position:fixed;
+    inset:0;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+#loveVideo{
+
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+
+}
+
+
+.loveContent{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:2;
+
+}
+
+.loveOverlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:-1;
+}
+
+#heartRain{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:2;
+}
+
+.loveContent{
+
+    position:relative;
+
+    z-index:5;
+
+    width:95%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:#fff;
+
+}
+.loveTitle{
+    font-size:60px;
+    margin-bottom:40px;
+    text-shadow:0 0 20px hotpink;
+}
+
+.lovePhotos{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:25px;
+
+    flex-wrap:nowrap;
+
+    margin-bottom:40px;
+
+}
+.loveCard{
+    width:220px;
+    text-align:center;
+}
+
+.loveCard img{
+    width:220px;
+    height:280px;
+    object-fit:cover;
+    border-radius:18px;
+    border:5px solid white;
+    box-shadow:0 0 25px rgba(255,255,255,.5);
+}
+
+.loveCard p{
+    margin-top:15px;
+    font-size:20px;
+    color:#fff;
+    text-shadow:0 0 10px #000;
+}
+
+/* Falling Hearts */
+
+.heart{
+    position:absolute;
+    top:-50px;
+    font-size:30px;
+    animation:heartFall 6s linear infinite;
+}
+
+@keyframes heartFall{
+    from{
+        transform:translateY(-50px);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+/* ===========================
+   LAST VIDEO
+=========================== */
+
+#lastClipPage {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+#lastVideo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===========================
+   FINAL PAGE
+=========================== */
+
+#finalPage {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.finalContent {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    color: white;
+}
+
+/* ===========================
+   CONFETTI
+=========================== */
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background: red;
+    animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(120vh);
+    }
+}
+
+/* ===========================
+   BALLOONS
+=========================== */
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    border-radius: 50%;
+    animation: floatUp 8s linear infinite;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-120vh);
+    }
+}
+
+/* ===========================
+   FADE
+=========================== */
+
+.fadeIn {
+    animation: fadeIn 0.8s forwards;
+}
+
+.fadeOut {
+    animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.loveNext{
+    margin-top:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+}
+
+#happyInput{
+    width:260px;
+    padding:15px;
+    border:none;
+    border-radius:30px;
+    font-size:20px;
+    text-align:center;
+}
+
+#loveNextBtn{
+    width:65px;
+    height:65px;
+    border:none;
+    border-radius:50%;
+    font-size:28px;
+    cursor:pointer;
+    background:white;
+    color:#ff3f8e;
+}
+
+#loveNextBtn:hover{
+    transform:scale(1.1);
+}
+#finalPage{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    background-image:url("images/finalpic-bg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+
+.finalContainer{
+
+    width:90%;
+    height:100%;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:50px;
+
+}
+
+
+.finalPhoto{
+
+    width:40%;
+
+}
+
+
+.finalPhoto img{
+
+    width:100%;
+
+    max-height:75vh;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:0 0 30px rgba(255,255,255,0.5);
+
+}
+
+
+
+.finalMessage{
+
+    width:50%;
+
+    color:white;
+
+    text-align:center;
+
+    font-family:"Georgia",serif;
+
+    background:rgba(0,0,0,0.35);
+
+    padding:35px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(5px);
+
+}
+
+
+.finalMessage h1{
+
+    font-size:45px;
+
+    margin-bottom:25px;
+
+}
+
+
+.finalMessage p{
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+}
+
+
+.finalMessage h2{
+
+    font-size:32px;
+
+    margin-top:25px;
+
+}
+#byeBtn{
+
+    position:absolute;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    padding:14px 45px;
+
+    font-size:20px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:white;
+
+    color:#ff4d6d;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    box-shadow:0 0 20px rgba(255,255,255,0.5);
+
+}
+
+
+#byeBtn:hover{
+
+    transform:translateX(-50%) scale(1.1);
+
+}
+/* ================= KEYPAD ================= */
+
+/* ================= KEYPAD ================= */
+
+.keypad{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,70px);
+
+    gap:12px;
+
+    justify-content:center;
+
+    margin-top:25px;
+
+}
+
+
+.keypad button{
+
+    width:70px;
+
+    height:70px;
+
+    padding:0;
+
+    font-size:24px;
+
+    border-radius:10px;
+
+}
+
+
+#passcode{
+
+    width:240px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+/* ===========================
+   CALL PROFILE DESIGN
+=========================== */
+
+#callScreen{
+
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:url("images/call-bg.jpg") center/cover no-repeat;
+
+    animation:bgZoom 8s infinite alternate;
+
+}
+
+
+@keyframes bgZoom{
+
+    from{
+        background-size:100%;
+    }
+
+    to{
+        background-size:110%;
+    }
+
+}
+
+
+
+/* PROFILE IMAGE */
+
+#callerPhoto{
+
+    width:150px;
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid white;
+
+    box-shadow:
+    0 0 20px #ff4f8b,
+    0 0 40px #ff4f8b;
+
+    animation:photoGlow 2s infinite alternate;
+
+    margin-bottom:20px;
+
+}
+
+
+
+@keyframes photoGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.05);
+    }
+
+}
+
+
+
+/* HEART */
+
+.callHeart{
+
+    font-size:50px;
+
+    animation:heartBeat 1s infinite;
+
+}
+
+
+
+@keyframes heartBeat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.3);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+
+
+/* DISTANCE TEXT */
+
+.distance{
+
+    font-size:24px;
+
+    color:#ffd6e5;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* CALLING DOTS */
+
+.dots::after{
+
+    content:"";
+
+    animation:dots 1.5s infinite;
+
+}
+
+
+
+@keyframes dots{
+
+    0%{
+        content:"";
+    }
+
+    25%{
+        content:".";
+    }
+
+    50%{
+        content:"..";
+    }
+
+    75%{
+        content:"...";
+    }
+
+}
+
+
+
+/* CALL TITLE */
+
+.callContent h1{
+
+    font-size:70px;
+
+    margin:10px;
+
+    color:white;
+
+}
+/* ===========================
+   CALL NOTIFICATION
+=========================== */
+
+#callNotification{
+
+    position:fixed;
+
+    top:30px;
+    left:50%;
+
+    transform:translateX(-50%) translateY(-100px);
+
+    width:360px;
+
+    padding:15px 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:rgba(30,30,30,.85);
+
+    color:white;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(15px);
+
+    z-index:999;
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+
+
+#callNotification img{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+
+#callNotification h3{
+
+    margin:0;
+
+    font-size:20px;
+
+}
+
+
+
+#callNotification p{
+
+    margin-top:5px;
+
+    font-size:15px;
+
+}
+
+
+
+/* SHOW */
+
+.showNotification{
+
+    opacity:1 !important;
+
+    transform:translateX(-50%) translateY(0) !important;
+
+}
+.wishNote{
+
+    position:absolute;
+
+    bottom:90px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    text-align:center;
+
+    color:white;
+
+    font-family:"Georgia",serif;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    text-shadow:0 0 10px black;
+
+    opacity:0.9;
+
+}
+/* ================= LOVE PAGE BOTTOM ================= */
+
+
+.loveBottom{
+
+    width:100%;
+
+    margin-top:35px;
+
+    padding:0 50px;
+
+}
+
+.wishNote h3{
+
+    font-size:24px;
+
+    color:#ffd8e8;
+
+    margin-bottom:15px;
+
+    text-shadow:0 0 12px hotpink;
+
+}
+
+.wishRow{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+.wishRow p{
+
+    margin:0;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    color:#fff;
+
+    font-style:italic;
+
+}
+
+.happyBox{
+
+    position:absolute;
+
+    right:50px;
+
+    bottom:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    z-index:100;
+
+}
+
+#happyInput{
+
+    width:250px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    font-size:20px;
+
+}
+
+
+#loveNextBtn{
+
+    width:65px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#ff3f8e;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+}
+#endPage{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:black;
+
+}
+
+#endVideo{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.endOverlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+}
+
+.endText{
+
+    position:absolute;
+
+    bottom:40px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    z-index:5;
+
+    font-family:"Georgia",serif;
+
+}
+
+.endText h2{
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+}
+
+.endText p{
+
+    font-size:22px;
+
+    line-height:1.7;
+
+}
+#closeBtn{
+
+    position:absolute;
+
+    right:35px;
+
+    bottom:30px;
+
+    padding:14px 35px;
+
+    border:none;
+
+    border-radius:35px;
+
+    background:#ff4f8b;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    box-shadow:0 0 20px rgba(255,79,139,.5);
+
+    transition:.3s;
+
+}
+
+#closeBtn:hover{
+
+    transform:scale(1.08);
+
+}

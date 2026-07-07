@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <audio id="birthdayMusic" loop>
+        <source src="audio/birthday.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- INTRO VIDEO -->
+    <video autoplay muted loop playsinline id="bgVideo">
+    <source src="videos/intro.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<!-- SCENE 1 -->
+<!-- INTRO GAME -->
+
+<div class="content">
+
+
+    <!-- LEFT IMAGE -->
+
+    <div class="introLeft">
+
+        <img src="images/hello.jpg">
+
+    </div>
+
+
+
+    <!-- RIGHT GAME -->
+
+    <div class="passBox">
+
+        <h1>❤️</h1>
+
+        <h2> HI-LO</h2>
+
+        <p>
+            can u guess? 😄
+        </p>
+
+
+        <input 
+        id="passcode"
+        readonly
+        placeholder="Its-OK,Any 4 digits">
+        
+        
+        <div class="keypad">
+        
+            <button class="key">1</button>
+            <button class="key">2</button>
+            <button class="key">3</button>
+        
+            <button class="key">4</button>
+            <button class="key">5</button>
+            <button class="key">6</button>
+        
+            <button class="key">7</button>
+            <button class="key">8</button>
+            <button class="key">9</button>
+        
+            <button class="key">*</button>
+            <button class="key">0</button>
+            <button class="key">#</button>
+        
+            <button id="deleteBtn">⌫</button>
+            <button id="startBtn">Enter 💖</button>
+        
+        </div>
+
+    </div>
+
+
+</div>
+<!-- CALL NOTIFICATION -->
+
+<div id="callNotification">
+
+    <img src="images/caller.jpg">
+
+    <div>
+        <h3>UNKNOWN ❤️</h3>
+        <p>Calling from 200 km away</p>
+    </div>
+
+</div>
+
+<!-- CALL -->
+<div id="callScreen">
+
+    <div class="callOverlay"></div>
+
+    <div class="callContent">
+
+        <!-- Caller Photo -->
+        <img src="images/caller.jpg" id="callerPhoto">
+
+
+        <!-- Heart Animation -->
+        <div class="callHeart">
+            ❤️
+        </div>
+
+
+        <h1>UNKNOWN</h1>
+
+        <p class="distance">
+            Calling from: 200 km away ❤️
+        </p>
+
+
+        <p id="callMsg">
+            Calling<span class="dots"></span>
+        </p>
+
+
+        <div class="buttons">
+
+            <button id="declineBtn">
+                ❌ Decline
+            </button>
+
+            <button id="acceptBtn">
+                📞 Accept
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- KISS -->
+<div id="kissScene">
+
+    <div class="kissOverlay"></div>
+
+    <div class="kissContent">
+
+        <!-- LEFT FLOWERS -->
+        <div class="kissLeft">
+            <img src="images/flowers.jpg" alt="Flowers">
+        </div>
+
+        <!-- RIGHT TEXT -->
+        <div class="kissRight">
+
+            <h1>💋</h1>
+
+            <h2>Before I Wish You...</h2>
+
+            <p>A Virtual Kiss & Hug from my heart 🤗❤️</p>
+
+            <p>
+                For extra luck and countless blessings...<br>
+                God sent me instead ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+    <div id="kissAnimation"></div>
+
+    <button id="kissBtn">💋 Kiss</button>
+
+</div>
+<!-- BLOW -->
+<div id="blowPage">
+    <video id="blowVideo" playsinline>
+        <source src="videos/candle.mp4" type="video/mp4">
+    </video>
+
+    <div class="blowOverlay"></div>
+
+    <div class="blowContent">
+        <h1>🎂</h1>
+        <h2>Make a wish...</h2>
+        <button id="playBlowBtn">🎂 Blow Candle</button>
+    </div>
+</div>
+
+<!-- AGE -->
+<div id="agePage">
+    <div class="ageOverlay"></div>
+
+    <!-- Right Arrow -->
+    <button id="ageNextBtn">➡️</button>
+</div>
+<!-- BIRTHDAY -->
+<div id="birthdayPage">
+
+    <div class="birthdayOverlay"></div>
+
+    <div class="birthdayContent">
+
+        <h1 class="birthdayTitle">🎉 Happy Birthday ❤️</h1>
+
+        <div class="photoRow">
+
+            <div class="photoCard">
+                <img id="photo1" src="images/photo1.jpeg">
+                <p>❤️ The smile that stole my heart.</p>
+            </div>
+
+            <div class="photoCard">
+                <img id="photo2" src="images/photo2.jpeg">
+                <p>❤️ Your caring heart means everything.</p>
+            </div>
+
+            <div class="photoCard">
+                <img id="photo3" src="images/photo3.jpeg">
+                <p>❤️ Every moment with you is my favourite.</p>
+            </div>
+
+            <div class="photoCard">
+                <img id="photo4" src="images/photo4.jpeg">
+                <p>❤️ Forever my favourite person.</p>
+            </div>
+
+        </div>
+
+        <button id="hugBtn">🤗 love </button>
+
+    </div>
+
+</div>
+
+<!-- LOVE PAGE -->
+
+<div id="lovePage">
+
+    <video autoplay muted loop playsinline id="loveVideo">
+        <source src="videos/last.mp4" type="video/mp4">
+    </video>
+
+    <div class="loveOverlay"></div>
+
+    <div class="loveContent">
+
+        <h1 class="loveTitle">
+            ❤️ we got that love ❤️
+        </h1>
+
+
+        <div class="lovePhotos">
+
+            <div class="loveCard">
+                <img src="images/picture1.jpg">
+                <p>Peace ❤️</p>
+            </div>
+
+            <div class="loveCard">
+                <img src="images/picture2.jpg">
+                <p>Smile ❤️</p>
+            </div>
+
+            <div class="loveCard">
+                <img src="images/picture3.jpg">
+                <p>Happiness ❤️</p>
+            </div>
+
+            <div class="loveCard">
+                <img src="images/picture4.jpg">
+                <p>HIM & I ❤️</p>
+            </div>
+
+        </div>
+
+        <div class="loveBottom">
+
+            <div class="wishNote">
+                <h3>One Wish you asked me for... ❤️</h3>
+        
+                <p>
+                    Not Today, But Someday
+                <p>
+                    I want too,but 
+                </p>
+                    Some beautiful things need the perfect time ✨<br>
+                    Until then, keep smiling and never feel hurt.
+                </p>
+            </div>
+        
+                        <div class="happyBox">
+            
+                            <input
+                                type="text"
+                                id="happyInput"
+                                placeholder="Type 'happy' ❤️">
+            
+                            <button id="loveNextBtn">➜</button>
+            
+                        </div>
+            
+                    </div>
+            
+                </div>
+            
+            </div>
+<div id="finalPage">
+
+    <div class="finalContainer">
+
+        <div class="finalPhoto">
+            <img src="images/lastphoto.jpg">
+        </div>
+
+
+        <div class="finalMessage">
+
+            <h1>Happy Birthday! ❤️</h1>
+
+            <p>
+            Thank you for coming into my life and making it perfect in every way.
+            You are more than enough for me you make me feel complete.
+            Every time I look at you, I wonder how someone can be so perfect in every way.
+            </p>
+
+
+            <p>
+            You are the most special person in my life -
+            the main character in my life's journey.
+            I truly can't imagine a single day without you.
+            </p>
+
+
+            <p>
+            I want to spend my whole life with you today, tomorrow, and forever.
+            </p>
+
+
+            <h2>
+            Happy Birthday Aryan! ❤️
+            </h2>
+
+        </div>
+
+    </div>
+
+    <button id="byeBtn">
+        Bye ❤️
+    </button>
+</div>
+
+<div id="endPage">
+
+    <video id="endVideo" autoplay playsinline>
+
+        <source src="videos/theend.mp4" type="video/mp4">
+
+    </video>
+
+    <div class="endOverlay"></div>
+
+    <div class="endText">
+
+        <h2>Enjoy Your Day ❤️</h2>
+
+        <p>
+            you're lucky to have me😉❤️ <br>
+            Wishing you endless happiness and beautiful memories. ✨
+        </p>
+
+    </div>
+    <button id="closeBtn">Close ❤️</button>
+</div>
+
+<!-- LAST VIDEO -->
+<div id="lastClipPage">
+    <video id="lastVideo" playsinline>
+        <source src="videos/lastclip.mp4" type="video/mp4">
+    </video>
+
+    <div class="lastOverlay"></div>
+
+    <div class="lastText">
+        <h2>Happy Birthday ❤️</h2>
+        <h4 id="typingQuote"></h4>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
